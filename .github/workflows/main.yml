@@ -62,5 +62,7 @@ jobs:
           
       - name: docker run
         run: 
-          docker stop ${{ env.CONTAINER }} && docker rm ${{ env.CONTAINER }} && docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/gsample01:latest
+          docker stop ${{ env.CONTAINER }}
+          docker rm ${{ env.CONTAINER }}
+          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/gsample01:latest
           docker run -d --name ${{ env.CONTAINER }} -p 50005:50005 ${{ env.IMAGE }}:latest
