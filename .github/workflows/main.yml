@@ -61,6 +61,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           
       - name: docker run
-        run: 
+        run: |
           docker stop ${{ env.CONTAINER }} && docker rm ${{ env.CONTAINER }} && docker rmi ${{ env.IMAGE }}:latest
           docker run -d --name ${{ env.CONTAINER }} -p 50005:50005 ${{ env.IMAGE }}:latest
