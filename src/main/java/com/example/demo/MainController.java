@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/member")
 public class MainController {
-
+	
 	@GetMapping({ "", "/" })
 	public ResponseEntity<?> index() {
 		Map<String, Object> map = new HashMap<>();
